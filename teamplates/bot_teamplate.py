@@ -1,16 +1,8 @@
 #import everything
-import logging
-import logging.handlers
-import random
-import sys
-import modules
+import logging,logging.handlers,random,sys,modules,discord,config
 import tkinter as tk
 from datetime import datetime
 from tkinter import font
-import auto_mod_config
-import config
-import discord
-import log_config
 from discord.ext import commands
 from discord.ext.audiorec import NativeVoiceClient
 from discord.utils import get
@@ -42,14 +34,14 @@ async def on_ready():
   print("Name : {}".format(Bot.user.name))
   print('ID: {}'.format(Bot.user.id))
   print("bot is on {} servers".format(len(Bot.guilds)))
-  print(r'invite me:https://discord.com/api/oauth2/authorize?client_id='+'{}'.format(Bot.user.id)+r'&permissions=8&scope=bot%20applications.commands')
+  print(r'invite me:https://discord.com/api/oauth2/authorize?client_id='+'{}'config.bot_ID+r'&permissions=8&scope=bot%20applications.commands')
 #auto-mod(ONLY DELETES BANNED WORDS)
 if config.automod==1:
   @Bot.event
   async def on_message(msg):
     if msg.author.bot:
       return
-    if any(x in msg.content for x in auto_mod_config.blacklist):
+    if any(x in msg.content for x in config.blacklist):
         await msg.reply('message contains banned word')
         await msg.delete()
     await Bot.process_commands(msg)
@@ -134,7 +126,7 @@ if config.audio==1:
 async def shutdown(ctx):
     log('shuting down via discord')
     await ctx.send("Bot shuting down")
-    await ctx.send("disconeckting bot from host <a:emoji_2:1024746759173451866>")
+    await ctx.send("disconeckting bot from host")
     print("<",date_time,"> shutdown command was run in discord")
     print("<",date_time,"> Bot shuting down")
     await ctx.send(':ballot_box_with_check:')
