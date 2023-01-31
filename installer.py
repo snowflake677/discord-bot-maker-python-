@@ -11,3 +11,4 @@ def makefile(file=str):
     f.write(requests.get("https://raw.githubusercontent.com/snowflake677/discord-bot-maker-python-/main/"+file).content.decode())
     f.close()
 makefile('dashboard.py')
+makefile('newbot.py')
