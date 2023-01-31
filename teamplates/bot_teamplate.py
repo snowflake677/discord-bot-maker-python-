@@ -34,7 +34,7 @@ async def on_ready():
   print("Name : {}".format(Bot.user.name))
   print('ID: {}'.format(Bot.user.id))
   print("bot is on {} servers".format(len(Bot.guilds)))
-  print(r'invite me:https://discord.com/api/oauth2/authorize?client_id='+'{}'config.bot_ID+r'&permissions=8&scope=bot%20applications.commands')
+  print(r'invite me:https://discord.com/api/oauth2/authorize?client_id='+config.bot_ID+r'&permissions=8&scope=bot%20applications.commands')
 #auto-mod(ONLY DELETES BANNED WORDS)
 if config.automod==1:
   @Bot.event
