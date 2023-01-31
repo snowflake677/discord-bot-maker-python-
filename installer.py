@@ -3,6 +3,7 @@ def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 install('discord.py[voice]')
 install('requests')
+install('discord-ext-audiorec')
 import requests
 def makefile(file=str):
     f=open(file,'w')
