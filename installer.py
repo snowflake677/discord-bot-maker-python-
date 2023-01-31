@@ -6,8 +6,8 @@ install('requests')
 import requests
 def makefile(file=str):
     f=open(file,'w')
-    f=open(file,'w')
     f.write(requests.get("https://raw.githubusercontent.com/snowflake677/discord-bot-maker-python-/main/"+file).content.decode())
     f.close()
 makefile('dashboard.py')
 makefile('newbot.py')
+makefile('modules.py')
