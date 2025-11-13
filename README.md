@@ -2,7 +2,5 @@ hello you can create infinit bots with some string's and one click now
 
 have a grate day
 
--snow
+-cf677
 (づ｡◕‿‿◕｡)づ
-
-{requiers wifi or lan}
